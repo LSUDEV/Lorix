@@ -417,7 +417,7 @@ do -- Utility
     end
     --
     do -- Fills
-        Utility.Fills["$U"] = function() return "envo : 1" end
+        Utility.Fills["$U"] = function() return "linux : 1" end
         Utility.Fills["$L"] = function() return "┃" end
         Utility.Fills["$F"] = function()
             local Fps = 0
