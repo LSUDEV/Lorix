@@ -38,6 +38,22 @@ local Library, Utility, Flags = {
 	},
     Presets = {
         Themes = {
+            Lorix = {
+                ["Light Contrast"] = Color3.fromRGB(155, 75, 165),
+                ["Dark Contrast"] = Color3.fromRGB(119, 57, 127),
+                ["Arrow Color"] = Color3.fromRGB(119, 57, 127),
+                ["Lighter Background"] = Color3.fromRGB(15, 15, 15),
+                ["Light Background"] = Color3.fromRGB(11, 11, 11),
+                ["Dark Background"] = Color3.fromRGB(8, 8, 8),
+                ["Outline"] = Color3.fromRGB(6, 6, 6),
+                ["Lighter Inline"] = Color3.fromRGB(25, 25, 25),
+                ["Light Inline"] = Color3.fromRGB(21, 21, 21),
+                ["Dark Inline"] = Color3.fromRGB(18, 18, 18),
+                ["Lighter Text"] = Color3.fromRGB(175, 175, 175),
+                ["Light Text"] = Color3.fromRGB(145, 145, 145),
+                ["Dark Text"] = Color3.fromRGB(120, 120, 120),
+                ["Darker Text"] = Color3.fromRGB(49, 49, 49)
+            },
             Celex = {
                 ["Light Contrast"] = Color3.fromRGB(155, 75, 165),
                 ["Dark Contrast"] = Color3.fromRGB(119, 57, 127),
@@ -185,7 +201,7 @@ do -- Utility
                 local Passed, Statement = pcall(Func, ...)
                 --
                 if not Passed then
-                    warn("Celex: Utility/General/Call ", Statement)
+                    warn("Lorix: Utility/General/Call ", Statement)
                 end
                 --
                 return Passed, Statement
@@ -211,7 +227,7 @@ do -- Utility
                 local Passed, Statement = pcall(Utility.Unload)
                 --
                 if not Passed then
-                    warn("Celex: Error while calling external unload:", Statement)
+                    warn("Lorix: Error while calling external unload:", Statement)
                 end
             end
             --
@@ -270,7 +286,7 @@ do -- Utility
                     Flags[Window][Index]:Set(Value)
                 end
             else
-                warn("Celex: Unable to find theme.")
+                warn("Lorix: Unable to find theme.")
             end
         end
     end
@@ -648,7 +664,7 @@ do -- Library
                 }
                 --
                 do -- Init
-                    for Theme, Color in next, Utility.Presets.Themes.Celex do
+                    for Theme, Color in next, Utility.Presets.Themes.Lorix do
                         Library.Themes[Theme] = Color
                     end
                 end
