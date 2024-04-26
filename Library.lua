@@ -39,8 +39,8 @@ local Library, Utility, Flags = {
     Presets = {
         Themes = {
             Lorix = {
-                ["Light Contrast"] = Color3.fromRGB(155, 75, 165),
-                ["Dark Contrast"] = Color3.fromRGB(119, 57, 127),
+                ["Light Contrast"] = Color3.fromRGB(0, 15, 30),
+                ["Dark Contrast"] = Color3.fromRGB(5, 5, 20),
                 ["Arrow Color"] = Color3.fromRGB(119, 57, 127),
                 ["Lighter Background"] = Color3.fromRGB(15, 15, 15),
                 ["Light Background"] = Color3.fromRGB(11, 11, 11),
@@ -50,10 +50,9 @@ local Library, Utility, Flags = {
                 ["Light Inline"] = Color3.fromRGB(21, 21, 21),
                 ["Dark Inline"] = Color3.fromRGB(18, 18, 18),
                 ["Lighter Text"] = Color3.fromRGB(175, 175, 175),
-                ["Light Text"] = Color3.fromRGB(145, 145, 145),
-                ["Dark Text"] = Color3.fromRGB(120, 120, 120),
+                ["Light Text"] = Color3.fromRGB(255, 255, 255),
+                ["Dark Text"] = Color3.fromRGB(175, 175, 175),
                 ["Darker Text"] = Color3.fromRGB(49, 49, 49)
-                
             },
             Celex = {
                 ["Light Contrast"] = Color3.fromRGB(155, 75, 165),
