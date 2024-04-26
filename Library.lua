@@ -53,6 +53,7 @@ local Library, Utility, Flags = {
                 ["Light Text"] = Color3.fromRGB(145, 145, 145),
                 ["Dark Text"] = Color3.fromRGB(120, 120, 120),
                 ["Darker Text"] = Color3.fromRGB(49, 49, 49)
+                
             },
             Celex = {
                 ["Light Contrast"] = Color3.fromRGB(155, 75, 165),
