@@ -1483,9 +1483,6 @@ do -- Library
                     Tick = tick(),
                     --
                     Window = self,
-                    --
-                    Refresh = (Utility.Table:Property(Properties, "RefreshRate", "Refresh", "Rate", "Tick") or 10),
-                    Callback = (Utility.Table:Property(Properties, "Callback", "Function", "Func", "Update"))
                 }
                 --
                 do -- Objects
@@ -1500,49 +1497,20 @@ do -- Library
                     Notification.Objects["Text"] = Library.Objects:Text(nil, Notification.Objects["Text_Outline"], UDim2.new(0, -1, 0, -1), UDim2.new(1, 0, 1, 0), "", "Light Text", "Center", 1000)
                 end
                 --
-                do -- Functions
-                    function Notification:Update()
-                        local Passed, Statement = Utility.General:Call(Notification.Callback)
-                        --
-                        if Passed and Statement then
-                            Notification.Objects["Outline"].Visible = true
-                            --
-                            Notification.Objects["Text_Outline"].Text = Statement
-                            Notification.Objects["Text"].Text = Statement
-                            --
-                            Notification.Objects["Outline"].Size = UDim2.new(0, (Notification.Objects["Text_Outline"].TextBounds.X + 14), 0, 25)
-                        else
-                            Notification.Objects["Outline"].Visible = false
-                        end
-                    end
-                    --
-                    function Notification:Set(State)
-                        Notification.State = (typeof(State) == nil and Notification.State or State)
-                        --
-                        Notification.Objects["Outline"].Visible = Notification.State
-                    end
-                    --
-                    function Notification:Position(State)
-                        Notification.SetPosition = (typeof(State) == nil and Notification.SetPosition or State)
-                        --
-                        Notification.Objects["Outline"].AnchorPoint = Vector2.new(1, 1)
-                        --
-                        Notification.Objects["Outline"].Position = UDim2.new(1,-8, 1, -8)
-                    end
-                    --
-                    function Notification:Gradient(State)
-                        Notification.Top = State
-                        --
-                        Notification.Objects["Text_Outline"].Position = UDim2.new(0, 1, 0.5, 0)
-                        Notification.Objects["Gradient"].Position = UDim2.new(0, 1, 0, 18)
-                        Notification.Objects["Gradient_Line2"].Position = UDim2.new(0, 0, 0, 0)
-                    end
-                end
-                --
                 do -- Setup
-                    Flags[Notification.Window]["Notification"] = Notification
+                    Notification.Objects["Outline"].Visible = true
+                    Notification.Objects["Outline"].AnchorPoint = Vector2.new(1, 1)
+                    Notification.Objects["Outline"].Position = UDim2.new(1,-8, 1, -8)
                     --
-                    Notification:Update()
+                    Notification.Objects["Text_Outline"].Position = UDim2.new(0, 1, 0.5, 0)
+                    Notification.Objects["Gradient"].Position = UDim2.new(0, 1, 0, 18)
+                    Notification.Objects["Gradient_Line2"].Position = UDim2.new(0, 0, 0, 0)
+                    --
+                    Notification.Objects["Text_Outline"].Text = "test"
+                    Notification.Objects["Text"].Text = "test"
+                    Notification.Objects["Outline"].Size = UDim2.new(0, (Notification.Objects["Text_Outline"].TextBounds.X + 14), 0, 25)
+                    --
+                    Flags[Notification.Window]["Notification"] = Notification
                     --
                     return Notification
                 end
