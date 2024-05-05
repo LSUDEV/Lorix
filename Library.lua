@@ -1507,6 +1507,7 @@ do -- Library
                     Notification.Objects["Gradient"].Position = UDim2.new(0, 1, 0, 18)
                     Notification.Objects["Gradient_Line2"].Position = UDim2.new(0, 0, 0, 0)
                     --
+                    print(self.Name);
                     Notification.Objects["Text_Outline"].Text = self.Name
                     Notification.Objects["Text"].Text = self.Name
                     Notification.Objects["Outline"].Size = UDim2.new(0, (Notification.Objects["Text_Outline"].TextBounds.X + 14), 0, 25)
