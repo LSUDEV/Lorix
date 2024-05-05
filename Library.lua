@@ -198,8 +198,8 @@ do -- Utility
         end
         --
         function Utility.General:Call(Func, ...)
-            print('sum shit updated nigga')
             if Func then
+                print('sum shit updated nigga')
                 local Passed, Statement = pcall(Func, ...)
                 --
                 if not Passed then
@@ -2779,14 +2779,6 @@ do -- Library
                         return Content
                     end
                 end
-                --
-                Flags = setmetatable({}, {
-                    __index = Flags,
-                    __newindex = function(tbl, key, value)
-                        rawset(tbl, key, value)  -- Set the value in the table
-                        print("Flags updated! Key:", key, "Value:", value)
-                    end
-                })
             end
         end
     end
