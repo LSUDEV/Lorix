@@ -2153,6 +2153,7 @@ do -- Library
                 --
                 do -- Functions
                     function Content:Set(State)
+                        print(Content.Danger);
                         print(Flags[self.Window]["Options Unsafe Enabled"].State);
                         Content.State = State
                         --
