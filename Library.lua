@@ -1481,6 +1481,7 @@ do -- Library
                     --
                     Window = self,
                     --
+                    Refresh = (Utility.Table:Property(Properties, "RefreshRate", "Refresh", "Rate", "Tick") or 10),
                     Name = (Utility.Table:Property(Properties, "Text") or "Content"),
                     Danger = (Utility.Table:Property(Properties, "Danger") or false),
                 }
@@ -1495,6 +1496,25 @@ do -- Library
                     --
                     Notification.Objects["Text_Outline"] = Library.Objects:Text(Vector2.new(0, 0.5), Notification.Objects["Frame"], UDim2.new(0, 1, 0.5, 2), UDim2.new(1, 0, 1, -6), "", "Outline", "Center", 1000)
                     Notification.Objects["Text"] = Library.Objects:Text(nil, Notification.Objects["Text_Outline"], UDim2.new(0, -1, 0, -1), UDim2.new(1, 0, 1, 0), "", "Light Text", "Center", 1000)
+                end
+                --
+                do -- Functionss
+                    function Notification:Remove()
+                        Utility.Screens[Notification]:Remove();
+                        Notification.Objects["Outline"].Visible = false
+                    end
+                end
+                --
+                do -- Connections
+                    Utility.General:Connect(RunService.RenderStepped, function()
+                        local Tick = tick()
+                        --
+                        if (((Tick - Notification.Tick) * 3000) >= Notification.Refresh) then
+                            Notification:Remove()
+                            --
+                            Notification.Tick = Tick
+                        end
+                    end)
                 end
                 --
                 do -- Setup
