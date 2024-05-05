@@ -2153,7 +2153,7 @@ do -- Library
                 --
                 do -- Functions
                     function Content:Set(State)
-                        if (Content.Danger and not Flags[self.Window]["Options Unsafe Enabled"].State) then
+                        if (Content.Danger and Flags[self.Window]["Options Unsafe Enabled"] and Flags[self.Window]["Options Unsafe Enabled"]:Get()) then
                             print('do not do shit')
                         end
                         --
