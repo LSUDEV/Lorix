@@ -1498,7 +1498,6 @@ do -- Library
                 end
                 --
                 do -- Setup
-                    table.insert(Library.NotifLogs, string.format("[%s]: %s", os.date("%X"), self.Name))
                     Notification.Objects["Outline"].Visible = true
                     Notification.Objects["Outline"].AnchorPoint = Vector2.new(1, 1)
                     Notification.Objects["Outline"].Position = UDim2.new(1,-8, 1, -8)
@@ -1507,9 +1506,9 @@ do -- Library
                     Notification.Objects["Gradient"].Position = UDim2.new(0, 1, 0, 18)
                     Notification.Objects["Gradient_Line2"].Position = UDim2.new(0, 0, 0, 0)
                     --
-                    print(self.Name);
-                    Notification.Objects["Text_Outline"].Text = string.format("[%s]: %s", os.date("%X"), self.Name)
-                    Notification.Objects["Text"].Text = string.format("[%s]: %s", os.date("%X"), self.Name)
+                    print(Notification.Name);
+                    Notification.Objects["Text_Outline"].Text = string.format("[%s]: %s", os.date("%X"), Notification.Name)
+                    Notification.Objects["Text"].Text = string.format("[%s]: %s", os.date("%X"), Notification.Name)
                     Notification.Objects["Outline"].Size = UDim2.new(0, (Notification.Objects["Text_Outline"].TextBounds.X + 14), 0, 25)
                     --
                     Flags[Notification.Window]["Notification"] = Notification
