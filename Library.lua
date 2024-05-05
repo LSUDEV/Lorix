@@ -2778,6 +2778,11 @@ do -- Library
                         return Content
                     end
                 end
+                --
+                Flags = setmetatable({}, {__newindex = function(tbl, key, value) 
+                    rawset(Flags, key, value) 
+                    print("Flags updated! Key:", key, "Value:", value) 
+                end})
             end
         end
     end
