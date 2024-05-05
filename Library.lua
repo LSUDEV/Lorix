@@ -2153,8 +2153,10 @@ do -- Library
                 --
                 do -- Functions
                     function Content:Set(State)
-                        print(Content.Danger);
-                        print(Flags[self.Window]["Options Unsafe Enabled"].State);
+                        if (Content.Danger and not Flags[self.Window]["Options Unsafe Enabled"].State) then
+                            print('do not do shit')
+                        end
+                        --
                         Content.State = State
                         --
                         Utility.General:Update(Content.Objects["Frame"], {
