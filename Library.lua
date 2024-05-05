@@ -2153,8 +2153,9 @@ do -- Library
                 --
                 do -- Functions
                     function Content:Set(State)
-                        if Content.Danger and (Content.Flag == "Options Unsafe Enabled") and (Content.State == true) then
-                            print('do not do shit')
+                        if Content.Danger and Flags[self.Window]["Options Unsafe Enabled"] then
+                            print(Flags[self.Window]["Options Unsafe Enabled"].State)
+                            return
                         end
                         --
                         Content.State = State
