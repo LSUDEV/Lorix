@@ -2794,9 +2794,5 @@ do -- Library
         end
     end
 end
---
-Library.OnFlagChanged:Connect(function(Data)
-    print('changed');
-end);
 -- // Return
 return Library, Utility, Flags
