@@ -1499,11 +1499,21 @@ do -- Library
                 end
                 --
                 do -- Functionss
-  
+                    function Notification:Remove()
+                        --Notification.Objects["Outline"].Visible = false
+                    end
                 end
                 --
                 do -- Connections
-
+                    Utility.General:Connect(RunService.RenderStepped, function()
+                        local Tick = tick()
+                        --
+                        if (((Tick - Notification.Tick) * 3000) >= Notification.Refresh) then
+                            Notification:Remove()
+                            --
+                            Notification.Tick = Tick
+                        end
+                    end)
                 end
                 --
                 do -- Setup
