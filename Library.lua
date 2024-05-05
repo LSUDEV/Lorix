@@ -1500,8 +1500,7 @@ do -- Library
                 --
                 do -- Functionss
                     function Notification:Remove()
-                        --
-                        Notification.Objects["Outline"].Visible = false
+                        --Notification.Objects["Outline"].Visible = false
                     end
                 end
                 --
