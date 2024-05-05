@@ -1792,6 +1792,7 @@ do -- Library
                     Offset = 0,
                     --
                     Name = (Utility.Table:Property(Properties, "Name", "Text") or "Content"),
+                    Danger = (Utility.Table:Property(Properties, "Danger") or false),
                     Center = (Utility.Table:Property(Properties, "Center", "Middle") or false),
                     Inlay = (Utility.Table:Property(Properties, "Inlayed", "Inlay") or false),
                     Wide = (Utility.Table:Property(Properties, "Wide", "Wider") or false)
@@ -1800,7 +1801,7 @@ do -- Library
                 do -- Objects
                     Content.Objects["Holder"] = Library.Objects:Holder(nil, self.Objects["Content"], nil, UDim2.new(1, 0, 0, (Content.Inlay and 12 or 16)))
                     --
-                    Content.Objects["Text"] = Library.Objects:Text(nil, Content.Objects["Holder"], UDim2.new(0, (Content.Wide and 25 or 37), 0, (Content.Inlay and 1 or -1)), UDim2.new(1, -37, 1, 0), Content.Name, "Light Text", (Content.Center and "Center"))
+                    Content.Objects["Text"] = Library.Objects:Text(nil, Content.Objects["Holder"], UDim2.new(0, (Content.Wide and 25 or 37), 0, (Content.Inlay and 1 or -1)), UDim2.new(1, -37, 1, 0), Content.Name, (Content.Danger and Color3.fromRGB(245, 239, 120) or "Light Text"), (Content.Center and "Center"))
                 end
                 --
                 do -- Functions
