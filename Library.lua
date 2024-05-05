@@ -1500,7 +1500,6 @@ do -- Library
                 --
                 do -- Functionss
                     function Notification:Remove()
-                        Utility.Screens[Notification]:Remove();
                         Notification.Objects["Outline"].Visible = false
                     end
                 end
@@ -1510,7 +1509,7 @@ do -- Library
                         local Tick = tick()
                         --
                         if (((Tick - Notification.Tick) * 3000) >= Notification.Refresh) then
-                            Notification:Remove()
+                            Notification
                             --
                             Notification.Tick = Tick
                         end
