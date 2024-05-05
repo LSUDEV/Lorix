@@ -2154,8 +2154,6 @@ do -- Library
                 do -- Functions
                     function Content:Set(State)
                         if Content.Danger and Flags[self.Window]["Options Unsafe Enabled"] and Flags[self.Window]["Options Unsafe Enabled"].State == false then
-                            print(Content.Name)
-                            print(Flags[self.Window]["Options Unsafe Enabled"].State)
                             return
                         end
                         --
