@@ -1780,6 +1780,31 @@ do -- Library
                 end
             end
             --
+            function Library.Sections:PlayerList(Properties)
+                local Properties = (Properties or {})
+                local Content = {
+                    Objects = {},
+                    --
+                    Window = self.Window,
+                    Page = self.Page,
+                    Section = (self.Section or self),
+                    --
+                    Offset = 0,
+                    --
+                    Name = (Utility.Table:Property(Properties, "Name", "Text") or "Content"),
+                    Danger = (Utility.Table:Property(Properties, "Danger") or false),
+                    Center = (Utility.Table:Property(Properties, "Center", "Middle") or false),
+                    Inlay = (Utility.Table:Property(Properties, "Inlayed", "Inlay") or false),
+                    Wide = (Utility.Table:Property(Properties, "Wide", "Wider") or false)
+                }
+                --
+                do -- Objects
+                    Content.Objects["Holder"] = Library.Objects:Holder(nil, self.Objects["Content"], nil, UDim2.new(1, 0, 0, 25))
+                    --
+                    Content.Objects["Outline"], Content.Objects["Outline_Frame"] = Library.Objects:Outline(nil, Content.Objects["Holder"], UDim2.new(0, (Content.Wide and 24 or 36), 0, 4), UDim2.new(1, (Content.Wide and -49 or -69), 0, 20), "Outline")
+                end
+            end
+            --
             function Library.Sections:Label(Properties)
                 local Properties = (Properties or {})
                 local Content = {
