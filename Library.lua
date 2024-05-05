@@ -450,6 +450,8 @@ do -- Utility
 end
 --
 do -- Library
+    Library.OnFlagChanged = Signal.new();
+    --
     do -- Objects
         function Library.Objects:Button(Parent, Index)
             return Utility.General:Create("TextButton", {
@@ -2230,6 +2232,7 @@ do -- Library
                         })
                         --
                         Utility.General:Call(Content.Callback, Content.State)
+                        Library.OnFlagChanged:Fire(Content);
                     end
                     --
                     function Content:Get(Raw)
@@ -2785,17 +2788,8 @@ do -- Library
     end
 end
 --
-library.OnFlagChanged:Connect(function(data)
-    local keybindExists = library.options[string.lower(data.flag) .. 'Bind'];
-    if (not keybindExists or not keybindExists.key or keybindExists.key == 'none') then return end;
-
-    local toggled = library.flags[data.flag];
-
-    if (toggled) then
-        visualizer:AddText(data.text);
-    else
-        visualizer:RemoveText(data.text);
-    end
+Library.OnFlagChanged:Connect(function(Data)
+    print('changed');
 end);
 -- // Return
 return Library, Utility, Flags
