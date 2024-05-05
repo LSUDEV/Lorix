@@ -1500,7 +1500,7 @@ do -- Library
                 --
                 do -- Functionss
                     function Notification:Remove()
-                        --Notification.Objects["Outline"].Visible = false
+                        Notification.Objects["Outline"].Visible = false
                     end
                 end
                 --
@@ -1508,7 +1508,7 @@ do -- Library
                     Utility.General:Connect(RunService.RenderStepped, function()
                         local Tick = tick()
                         --
-                        if (((Tick - Notification.Tick) * 3000) >= Notification.Refresh) then
+                        if (((Tick - Notification.Tick) * 1000) >= Notification.Refresh) then
                             Notification:Remove()
                             --
                             Notification.Tick = Tick
