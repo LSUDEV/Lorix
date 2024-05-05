@@ -1481,7 +1481,7 @@ do -- Library
                     --
                     Window = self,
                     --
-                    Name = (Utility.Table:Property(Properties, "Name", "Text") or "Content"),
+                    Name = (Utility.Table:Property(Properties, "Text") or "Content"),
                     Danger = (Utility.Table:Property(Properties, "Danger") or false),
                 }
                 --
