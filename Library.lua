@@ -2153,7 +2153,7 @@ do -- Library
                 --
                 do -- Functions
                     function Content:Set(State)
-                        print(Flags[self.Window]["Options Unsafe Enabled"]);
+                        print(Flags[self.Window]["Options Unsafe Enabled"].State);
                         Content.State = State
                         --
                         Utility.General:Update(Content.Objects["Frame"], {
