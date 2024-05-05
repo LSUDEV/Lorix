@@ -2779,10 +2779,13 @@ do -- Library
                     end
                 end
                 --
-                Flags = setmetatable({}, {__newindex = function(tbl, key, value) 
-                    rawset(Flags, key, value) 
-                    print("Flags updated! Key:", key, "Value:", value) 
-                end})
+                Flags = setmetatable({}, {
+                    __index = Flags,
+                    __newindex = function(tbl, key, value)
+                        rawset(tbl, key, value)  -- Set the value in the table
+                        print("Flags updated! Key:", key, "Value:", value)
+                    end
+                })
             end
         end
     end
