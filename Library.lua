@@ -1508,7 +1508,7 @@ do -- Library
                     --
                     Notification.Objects["Text_Outline"].Text = string.format("[%s]: %s", os.date("%X"), Notification.Name)
                     Notification.Objects["Text"].Text = string.format("[%s]: %s", os.date("%X"), Notification.Name)
-                    Notification.Objects["Outline"].Size = UDim2.new(0, (Notification.Objects["Text_Outline"].TextBounds.X + 14), 0, 50)
+                    Notification.Objects["Outline"].Size = UDim2.new(0, (Notification.Objects["Text_Outline"].TextBounds.X + 30), 0, 25)
                     --
                     Flags[Notification.Window]["Notification"] = Notification
                     --
