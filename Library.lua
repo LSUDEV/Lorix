@@ -198,6 +198,7 @@ do -- Utility
         end
         --
         function Utility.General:Call(Func, ...)
+            print('sum shit updated nigga')
             if Func then
                 local Passed, Statement = pcall(Func, ...)
                 --
