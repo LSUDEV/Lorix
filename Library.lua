@@ -1931,6 +1931,7 @@ do -- Library
                             Content.Objects["Frame"].BackgroundTransparency = 0
                         end)
                         --
+                        Library.OnFlagChanged:Fire(Content);
                         Utility.General:Call(Content.Callback)
                     end)
                 end
@@ -1974,6 +1975,7 @@ do -- Library
                         --
                         Content.Objects["Value"].Text = Content.State
                         --
+                        Library.OnFlagChanged:Fire(Content);
                         Utility.General:Call(Content.Callback, Content.State)
                     end
                     --
@@ -2077,6 +2079,7 @@ do -- Library
                             end
                         end
                         --
+                        Library.OnFlagChanged:Fire(Content);
                         Utility.General:Call(Content.Callback, Content.State)
                     end
                     --
@@ -2231,8 +2234,8 @@ do -- Library
                             BackgroundColor3 = (Content.State and "Dark Contrast" or "Lighter Inline")
                         })
                         --
-                        Utility.General:Call(Content.Callback, Content.State)
                         Library.OnFlagChanged:Fire(Content);
+                        Utility.General:Call(Content.Callback, Content.State)
                     end
                     --
                     function Content:Get(Raw)
@@ -2325,6 +2328,7 @@ do -- Library
                         --
                         Content.Objects["Frame"].Size = UDim2.new((1 - Utility.Math:Percentile(Content.State, Content.Minimum, Content.Maximum)), 0, 1, 0)
                         --
+                        Library.OnFlagChanged:Fire(Content);
                         Utility.General:Call(Content.Callback, Content.State)
                     end
                     --
@@ -2451,6 +2455,7 @@ do -- Library
                         --
                         Content.Objects["Value"].Text = Utility.Table:Stringify(Content.State, Content.Options)
                         --
+                        Library.OnFlagChanged:Fire(Content);
                         Utility.General:Call(Content.Callback, Content.State)
                     end
                     --
@@ -2622,6 +2627,7 @@ do -- Library
                             Content.Objects["Frame"].BackgroundColor3 = Color
 					        Content.Objects["Frame"].BackgroundTransparency = (Content.Alpha and Content.State[4] or 0)
                             --
+                            Library.OnFlagChanged:Fire(Content);
                             Utility.General:Call(Content.Callback, Color, Content.State[4])
                         end
                         --
@@ -2743,6 +2749,7 @@ do -- Library
                             end
                             --
                             if Content.Active ~= Previous then
+                                Library.OnFlagChanged:Fire(Content);
                                 Utility.General:Call(Content.Callback, Content.Active, Previous)
                                 --
                                 Content.Item:Update()
