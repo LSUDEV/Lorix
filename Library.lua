@@ -1,5 +1,5 @@
 -- // Signal
-local Signal = loadstring(game:HttpGet("https://raw.githubusercontent.com/LSUDEV/Lorix/Signal.lua"))()
+local Signal = loadstring(game:HttpGet("https://raw.githubusercontent.com/LSUDEV/Lorix/main/Signal.lua"))()
 -- // Tables
 local Library, Utility, Flags = {
     NotifLogs = {},
