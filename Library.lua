@@ -2143,7 +2143,7 @@ do -- Library
                     Content.Objects["Holder"] = Library.Objects:Holder(nil, self.Objects["Content"], nil, UDim2.new(1, 0, 0, 16))
                     --
                     Content.Objects["Frame"] = Library.Objects:Outline(nil, Content.Objects["Holder"], UDim2.new(0, 16, 0, 4), UDim2.new(0, 8, 0, 8), nil, "Lighter Inline")
-                    Content.Objects["Text"] = Library.Objects:Text(nil, Content.Objects["Holder"], UDim2.new(0, 37, 0, -1), UDim2.new(1, -37, 1, 0), Content.Name, (Content.Danger and "Light Contrast" or "Light Text"))
+                    Content.Objects["Text"] = Library.Objects:Text(nil, Content.Objects["Holder"], UDim2.new(0, 37, 0, -1), UDim2.new(1, -37, 1, 0), Content.Name, (Content.Danger and Color3.fromRGB(245, 239, 120) or "Light Text"))
                     --
                     Content.Objects["Gradient"] = Library.Objects:Gradient(Color3.fromRGB(75, 75, 75), 90, nil, Content.Objects["Frame"])
                     --
