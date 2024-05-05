@@ -1,3 +1,5 @@
+-- // Signal
+local Signal = loadstring(game:HttpGet("https://raw.githubusercontent.com/LSUDEV/Lorix/Signal.lua"))()
 -- // Tables
 local Library, Utility, Flags = {
     NotifLogs = {},
@@ -199,7 +201,6 @@ do -- Utility
         --
         function Utility.General:Call(Func, ...)
             if Func then
-                print('sum shit updated nigga')
                 local Passed, Statement = pcall(Func, ...)
                 --
                 if not Passed then
@@ -2783,5 +2784,18 @@ do -- Library
         end
     end
 end
+--
+library.OnFlagChanged:Connect(function(data)
+    local keybindExists = library.options[string.lower(data.flag) .. 'Bind'];
+    if (not keybindExists or not keybindExists.key or keybindExists.key == 'none') then return end;
+
+    local toggled = library.flags[data.flag];
+
+    if (toggled) then
+        visualizer:AddText(data.text);
+    else
+        visualizer:RemoveText(data.text);
+    end
+end);
 -- // Return
 return Library, Utility, Flags
